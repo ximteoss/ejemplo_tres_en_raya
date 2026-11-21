@@ -17,11 +17,20 @@ function App() {
     ["-","-","-"]
   ]);
 
+  function appClick(rowNumber, columnNumber){
+    console.log("Click en " + rowNumber + columnNumber);
+    let valuesCopy = JSON.parse(JSON.stringify(values));
+    let newMovement = turn===PLAYERX ? "X" : "0";
+    valuesCopy[rowNumber][columnNumber] = newMovement;
+    setTurn(turn===PLAYERX ? PLAYER0 : PLAYERX);
+    setValues(valuesCopy);
+  }
+
   return (
     <div className="App">
       <h2>TicTacToe</h2>
       <Header turn={turn}/>
-      <Board values={values}/>
+      <Board values={values} appClick={appClick} />
     </div>
   );
 }
