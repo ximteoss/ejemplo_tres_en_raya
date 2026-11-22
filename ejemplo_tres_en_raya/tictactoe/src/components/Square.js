@@ -4,5 +4,13 @@ const squareStyle = {
 }
 
 export default function Square(props){
-    return <button style={squareStyle} onClick={()=>props.boardClick(props.rowIndex, props.columnIndex)} > {props.value}</button>;
+
+    function squareClick(){
+        if(props.value==="-"){
+            props.boardClick(props.rowIndex, props.columnIndex);
+        }
+        
+    }
+
+    return <button style={squareStyle} onClick={squareClick} className={props.value==="-" ? "Clickable" : "No_Clickable"} > {props.value}</button>;
 }
