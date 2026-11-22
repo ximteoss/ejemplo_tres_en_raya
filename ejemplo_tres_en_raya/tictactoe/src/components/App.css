@@ -1,3 +1,4 @@
+/* Estilos por defecto de Create React App */
 .App {
   text-align: center;
 }
@@ -37,10 +38,12 @@
   }
 }
 
+/* 📌 CLASES PERSONALIZADAS USADAS EN Square.js:
+   Se asignan dinámicamente mediante className={props.value==="-" ? "Clickable" : "No_Clickable"} */
 .Clickable{
-  cursor: pointer;
+  cursor: pointer;       /* Manita: indica que la casilla está libre */
 }
 
 .No_Clickable{
-  cursor: not-allowed;
+  cursor: not-allowed;   /* Símbolo de prohibido: indica que la casilla ya está ocupada */
 }
